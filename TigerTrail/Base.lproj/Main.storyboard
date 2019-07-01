@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CLd-ZU-WGL">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Tzl-ew-sD1">
+            <objects>
+                <navigationController id="CLd-ZU-WGL" customClass="NavigationController" customModule="TigerTrail" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7cC-XD-LuZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="RdY-tt-M1h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ZO-Mm-itS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-565" y="130"/>
+        </scene>
+        <!--TigerCard Hotspot Map-->
+        <scene sceneID="QAh-TO-gPk">
+            <objects>
+                <viewController title="TigerCard Hotspot Map" id="Px5-HS-hHp" customClass="TigerCardHotspotMap" customModule="TigerTrail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lO4-Ji-tlV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cm6-ko-UXa">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cm6-ko-UXa" firstAttribute="leading" secondItem="lO4-Ji-tlV" secondAttribute="leading" id="FI9-8N-n0k"/>
+                            <constraint firstItem="cm6-ko-UXa" firstAttribute="top" secondItem="a4k-h6-yD5" secondAttribute="top" id="JhU-rt-tPF"/>
+                            <constraint firstAttribute="bottom" secondItem="cm6-ko-UXa" secondAttribute="bottom" id="scQ-XW-pmo"/>
+                            <constraint firstAttribute="trailing" secondItem="cm6-ko-UXa" secondAttribute="trailing" id="vuX-1s-vYy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a4k-h6-yD5"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="cm6-ko-UXa" id="CSs-OB-P5l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQ8-Wm-fQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="213" y="-530"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="Home" customModule="TigerTrail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG2" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sni-AA-KiM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SiG-a4-sbY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TigerTrail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="419-sx-8Ml">
+                                        <rect key="frame" x="129.5" y="217" width="155" height="48.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="37"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0oq-0P-Mhf" userLabel="Button Stack">
+                                        <rect key="frame" x="30" y="664" width="354" height="160"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChU-Oz-c0I" customClass="CustomButton" customModule="TigerTrail" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="28"/>
+                                                <state key="normal" title="Eating Clubs Map">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="b5x-MW-PBQ" kind="show" id="uqg-Qs-7vM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsD-tt-zZh" customClass="CustomButton" customModule="TigerTrail" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="33" width="354" height="28"/>
+                                                <state key="normal" title="TigerCard Hotspot">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="Px5-HS-hHp" kind="show" id="TfC-FO-TrQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69C-5P-HXk" customClass="CustomButton" customModule="TigerTrail" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="66" width="354" height="28"/>
+                                                <state key="normal" title="Libraries Map">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="odr-bR-FlL" kind="show" id="rtU-ty-R3c"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXh-uF-max" customClass="CustomButton" customModule="TigerTrail" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="99" width="354" height="28"/>
+                                                <state key="normal" title="Computer Clusters">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="Et6-tg-jEj" kind="show" id="sTB-xr-v6N"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXS-dd-TuR" customClass="CustomButton" customModule="TigerTrail" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="132" width="354" height="28"/>
+                                                <state key="normal" title="Residential Colleges">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="f9Z-uV-0MD" kind="show" id="62Z-nH-2an"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ChU-Oz-c0I" firstAttribute="top" secondItem="0oq-0P-Mhf" secondAttribute="top" id="53c-Rx-in5"/>
+                                            <constraint firstItem="lsD-tt-zZh" firstAttribute="top" secondItem="ChU-Oz-c0I" secondAttribute="bottom" constant="5" id="7Oq-q5-dZu"/>
+                                            <constraint firstAttribute="trailing" secondItem="69C-5P-HXk" secondAttribute="trailing" id="8U1-Nj-kIa"/>
+                                            <constraint firstItem="NXh-uF-max" firstAttribute="top" secondItem="69C-5P-HXk" secondAttribute="bottom" constant="5" id="Bwf-Tr-f2V"/>
+                                            <constraint firstAttribute="trailing" secondItem="lsD-tt-zZh" secondAttribute="trailing" id="D92-T3-5yp"/>
+                                            <constraint firstItem="69C-5P-HXk" firstAttribute="top" secondItem="lsD-tt-zZh" secondAttribute="bottom" constant="5" id="G4J-ui-QA1"/>
+                                            <constraint firstAttribute="trailing" secondItem="NXh-uF-max" secondAttribute="trailing" id="LZk-Ke-iEb"/>
+                                            <constraint firstItem="lsD-tt-zZh" firstAttribute="leading" secondItem="0oq-0P-Mhf" secondAttribute="leading" id="Lul-c2-iVi"/>
+                                            <constraint firstItem="KXS-dd-TuR" firstAttribute="leading" secondItem="0oq-0P-Mhf" secondAttribute="leading" id="NLa-HU-kCV"/>
+                                            <constraint firstItem="NXh-uF-max" firstAttribute="leading" secondItem="0oq-0P-Mhf" secondAttribute="leading" id="V4o-cu-9Ag"/>
+                                            <constraint firstItem="ChU-Oz-c0I" firstAttribute="leading" secondItem="0oq-0P-Mhf" secondAttribute="leading" id="YTa-BM-EMa"/>
+                                            <constraint firstAttribute="trailing" secondItem="KXS-dd-TuR" secondAttribute="trailing" id="b69-6f-mdq"/>
+                                            <constraint firstItem="69C-5P-HXk" firstAttribute="leading" secondItem="0oq-0P-Mhf" secondAttribute="leading" id="ceH-2V-1zy"/>
+                                            <constraint firstAttribute="height" constant="160" id="kJL-tu-Rvk"/>
+                                            <constraint firstAttribute="trailing" secondItem="ChU-Oz-c0I" secondAttribute="trailing" id="tsU-Hr-sMA"/>
+                                        </constraints>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TigerPaw" translatesAutoresizingMaskIntoConstraints="NO" id="RIo-Wd-xIw">
+                                        <rect key="frame" x="147" y="80" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="43R-D7-9Ef"/>
+                                            <constraint firstAttribute="width" constant="120" id="s66-8x-3p2"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.77827904929577463" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="RIo-Wd-xIw" firstAttribute="top" secondItem="SiG-a4-sbY" secondAttribute="top" constant="80" id="02F-Z8-uQR"/>
+                                    <constraint firstItem="RIo-Wd-xIw" firstAttribute="top" secondItem="SiG-a4-sbY" secondAttribute="top" constant="80" id="DzZ-we-1ki"/>
+                                    <constraint firstItem="RIo-Wd-xIw" firstAttribute="centerX" secondItem="SiG-a4-sbY" secondAttribute="centerX" id="Kti-ld-mlT"/>
+                                    <constraint firstAttribute="trailing" secondItem="0oq-0P-Mhf" secondAttribute="trailing" constant="30" id="Sn2-s3-QL7"/>
+                                    <constraint firstItem="419-sx-8Ml" firstAttribute="top" secondItem="RIo-Wd-xIw" secondAttribute="bottom" constant="17" id="XRe-Hc-BKi"/>
+                                    <constraint firstItem="0oq-0P-Mhf" firstAttribute="leading" secondItem="SiG-a4-sbY" secondAttribute="leading" constant="30" id="Zxs-uF-X9S"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="0oq-0P-Mhf" secondAttribute="bottom" constant="30" id="gMA-Gu-JJj"/>
+                                    <constraint firstItem="419-sx-8Ml" firstAttribute="centerX" secondItem="SiG-a4-sbY" secondAttribute="centerX" id="j3z-h0-fH8"/>
+                                    <constraint firstItem="0oq-0P-Mhf" firstAttribute="centerX" secondItem="SiG-a4-sbY" secondAttribute="centerX" id="yN6-Cs-KDC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sni-AA-KiM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ash-pe-5VC"/>
+                            <constraint firstItem="sni-AA-KiM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RgX-LO-3hB"/>
+                            <constraint firstAttribute="trailing" secondItem="sni-AA-KiM" secondAttribute="trailing" id="SRm-X9-g2F"/>
+                            <constraint firstItem="SiG-a4-sbY" firstAttribute="top" secondItem="sni-AA-KiM" secondAttribute="top" id="Vvt-1r-6j2"/>
+                            <constraint firstAttribute="trailing" secondItem="SiG-a4-sbY" secondAttribute="trailing" id="f3p-lp-wzy"/>
+                            <constraint firstAttribute="bottom" secondItem="SiG-a4-sbY" secondAttribute="bottom" id="hby-FZ-MBS"/>
+                            <constraint firstItem="SiG-a4-sbY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rjO-Ma-MGz"/>
+                            <constraint firstAttribute="bottom" secondItem="sni-AA-KiM" secondAttribute="bottom" id="zt2-q8-025"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Elj-5F-UmP"/>
+                    <connections>
+                        <segue destination="Et6-tg-jEj" kind="show" id="Le5-Wl-Bnt"/>
+                        <segue destination="Px5-HS-hHp" kind="show" id="dEX-pA-Ty6"/>
+                        <segue destination="f9Z-uV-0MD" kind="show" id="xUF-3T-IfS"/>
+                        <segue destination="odr-bR-FlL" kind="show" id="hHs-YT-30V"/>
+                        <segue destination="b5x-MW-PBQ" kind="show" id="olk-EG-r97"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="203" y="130"/>
+        </scene>
+        <!--Computer Clusters Map-->
+        <scene sceneID="qbx-o8-vmS">
+            <objects>
+                <viewController title="Computer Clusters Map" id="Et6-tg-jEj" customClass="ComputerClusters" customModule="TigerTrail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="326-Lf-5xI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="P55-gH-zNe">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="P55-gH-zNe" secondAttribute="trailing" id="7yN-Cg-5db"/>
+                            <constraint firstItem="P55-gH-zNe" firstAttribute="leading" secondItem="326-Lf-5xI" secondAttribute="leading" id="TmE-e1-Qnz"/>
+                            <constraint firstItem="P55-gH-zNe" firstAttribute="top" secondItem="P7u-cs-o8W" secondAttribute="top" id="ahd-Ta-EFD"/>
+                            <constraint firstAttribute="bottom" secondItem="P55-gH-zNe" secondAttribute="bottom" id="eQN-rr-96f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="P7u-cs-o8W"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="P55-gH-zNe" id="Y5v-Ec-JEd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fpb-is-iB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="946" y="130"/>
+        </scene>
+        <!--Eating Clubs Map-->
+        <scene sceneID="lER-vb-cpO">
+            <objects>
+                <viewController title="Eating Clubs Map" id="b5x-MW-PBQ" customClass="EatingClubs" customModule="TigerTrail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w71-Nr-Ih2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mdJ-0E-hl4">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mdJ-0E-hl4" firstAttribute="top" secondItem="WBd-2r-ila" secondAttribute="top" id="7Fe-d6-7cc"/>
+                            <constraint firstAttribute="bottom" secondItem="mdJ-0E-hl4" secondAttribute="bottom" id="hE0-IA-5jy"/>
+                            <constraint firstAttribute="trailing" secondItem="mdJ-0E-hl4" secondAttribute="trailing" id="kD8-DQ-BFg"/>
+                            <constraint firstItem="mdJ-0E-hl4" firstAttribute="leading" secondItem="w71-Nr-Ih2" secondAttribute="leading" id="psx-Lr-vTL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WBd-2r-ila"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="mdJ-0E-hl4" id="9Fd-Td-GQ9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jkI-GS-Yc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-504" y="812"/>
+        </scene>
+        <!--Residential Colleges Map-->
+        <scene sceneID="MrT-LU-nIP">
+            <objects>
+                <viewController title="Residential Colleges Map" id="f9Z-uV-0MD" customClass="ResidentialColleges" customModule="TigerTrail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="32J-kT-jaw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EYR-Uu-Lhj">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EYR-Uu-Lhj" secondAttribute="trailing" id="3rP-ve-OfX"/>
+                            <constraint firstAttribute="bottom" secondItem="EYR-Uu-Lhj" secondAttribute="bottom" id="4OW-ZK-Xdj"/>
+                            <constraint firstItem="EYR-Uu-Lhj" firstAttribute="leading" secondItem="32J-kT-jaw" secondAttribute="leading" id="hct-cf-Jqf"/>
+                            <constraint firstItem="EYR-Uu-Lhj" firstAttribute="top" secondItem="wtH-Bz-Whp" secondAttribute="top" id="ieL-qa-tsd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wtH-Bz-Whp"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="EYR-Uu-Lhj" id="TV8-cg-te0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aPR-nW-LIl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="203" y="812"/>
+        </scene>
+        <!--Campus Libraries Map-->
+        <scene sceneID="SGx-jF-Tlr">
+            <objects>
+                <viewController title="Campus Libraries Map" id="odr-bR-FlL" customClass="LibrariesMap" customModule="TigerTrail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g5q-X7-2Kt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PXC-he-kAQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="PXC-he-kAQ" secondAttribute="bottom" id="CBd-Ro-afa"/>
+                            <constraint firstItem="PXC-he-kAQ" firstAttribute="leading" secondItem="g5q-X7-2Kt" secondAttribute="leading" id="G7g-2s-eAX"/>
+                            <constraint firstItem="PXC-he-kAQ" firstAttribute="top" secondItem="LOY-bf-tFg" secondAttribute="top" id="uV0-TG-ghD"/>
+                            <constraint firstAttribute="trailing" secondItem="PXC-he-kAQ" secondAttribute="trailing" id="wmn-Sa-sgq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LOY-bf-tFg"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="PXC-he-kAQ" id="u47-xb-TJm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A0l-Da-k6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905" y="812"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BG2" width="341" height="256"/>
+        <image name="TigerPaw" width="1522.5" height="1478"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hHs-YT-30V"/>
+        <segue reference="62Z-nH-2an"/>
+        <segue reference="uqg-Qs-7vM"/>
+        <segue reference="Le5-Wl-Bnt"/>
+        <segue reference="TfC-FO-TrQ"/>
+    </inferredMetricsTieBreakers>
+</document>

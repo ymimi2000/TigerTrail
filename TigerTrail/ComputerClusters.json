@@ -1,0 +1,70 @@
+{
+  "data": [
+    [
+      1,
+      "Computer Cluster",
+      "Frist Campus Center",
+      "40.344840",
+      "-74.655966"
+    ],
+    [
+      2,
+      "Computer Cluster",
+      "Friend Center",
+      "40.3500151",
+      "-74.6527871"
+    ],
+    [
+      3,
+      "Computer Cluster",
+      "Whitman College",
+      "40.344038",
+      "-74.658213"
+    ],
+    [
+        4,
+        "Computer Cluster",
+        "Firestone Library",
+        "40.34955",
+        "-74.657617"
+    ],
+    [5, "Computer Cluster", "1901 Hall", "40.346528", "-74.66036"],
+    [6, "Computer Cluster", "1937 Hall", "40.345924", "-74.656206" ],
+    [7, "Computer Cluster", "1981", "40.343677", "-74.657197"],
+    [8, "Computer Cluster", "Blair Hall", "40.347561", "-74.662070"],
+    [9, "Computer Cluster", "Bloomberg Hall", "40.343574", "-74.655935"],
+    [10, "Computer Cluster", "Brown Hall", "40.346487", "-74.657860"],
+    [11, "Computer Cluster", "1976 Hall", "40.344640", "-74.655515"],
+    [12, "Computer Cluster", "Campbell Lounge", "40.348056", "-74.661584"],
+    [13, "Computer Cluster", "Campus Club", "40.347637", "-74.654486"],
+    [14, "Computer Cluster", "Center For Jewish Life", "40.346638", "-74.653641"],
+    [15, "Computer Cluster", "Dod Hall", "40.346790", "-74.658720"],
+    [16, "Computer Cluster", "East Pyne Hall", "40.348741", "-74.658460"],
+    [17, "Computer Cluster", "Edwards", "40.347157", "-74.659231"],
+    [18, "Computer Cluster", "Carl A. Fields Center", "40.349008", "-74.651675"],
+    [19, "Computer Cluster", "Fisher Hall", "40.348486","-74.654023" ],
+    [20, "Computer Cluster", "Forbes College", "40.342097", "-74.661084" ],
+    [21, "Computer Cluster", "Forbes Library", "40.342661", "-74.661312" ],
+    [22, "Computer Cluster", "Forbes Annex", "40.341663","-74.660684"],
+    [23, "Computer Cluster", "Foulke", "40.346326", "-74.661030"],
+    [24, "Computer Cluster", "Friend Center", "40.350235", "-74.652655"],
+    [25, "Computer Cluster", "Frist Campus Center", "40.346957", "-74.655298"],
+    [26, "Computer Cluster", "Graduate College", "40.340779", "-74.665126"],
+    [27, "Computer Cluster", "Holder Hall", "40.348581", "-74.661221" ],
+    [28, "Computer Cluster", "Joline Hall", "40.347686", "-74.662159" ],
+    [29, "Computer Cluster", "Lawrence Apts.", "40.332900", "-74.657145" ],
+    [30, "Computer Cluster", "Little Hall", "40.346753", "-74.660150" ],
+    [31, "Computer Cluster", "Madison Library", "40.348414", "-74.661907" ],
+    [32, "Computer Cluster", "McCosh Hall", "40.348230", "-74.656947"],
+    [33, "Computer Cluster", "McDonnell Hall", "40.345326", "-74.652485"],
+    [34, "Computer Cluster", "New Graduate College", "40.340900", "-74.666532" ],
+    [35, "Computer Cluster", "Pyne Hall", "40.345234", "-74.659659" ],
+    [36, "Computer Cluster", "Scully Hall", "40.344309", "-74.654509"],
+    [37, "Computer Cluster", "Spelman", "40.344595", "-74.659383"],
+    [38, "Computer Cluster", "Whitman - Wendell Hall B Library", "40.344275, -74.658317"],
+    [39, "Computer Cluster", "Wilcox Hall - Julian Street Library", "40.344810", "-74.656083"],
+    [40, "Computer Cluster", "Witherspoon Hall", "40.345257", "-74.657406"]
+
+]
+
+}

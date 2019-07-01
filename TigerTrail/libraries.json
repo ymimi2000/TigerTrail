@@ -1,0 +1,43 @@
+{
+  "data": [
+    [
+      "Library",
+      "Regular Academic Year Hours: 9:00 am to 11:45 pm",
+      "Architecture Library",
+      "40.34761360721406",
+      "-74.65606071243849"
+    ],
+    [
+      "Library",
+      "Regular Academic Year Hours: 9:00 am to 11:00 pm",
+      "East Asian Library",
+      "40.34680970224501",
+      "-74.65562626130395"
+    ],
+    [
+      "Library",
+      "Regular Academic Year Hours: 8:30 am to 2:00 am",
+      "Engineering Library",
+      "40.35031032806097",
+      "-74.65283669996859"
+    ],
+    [
+        "Library",
+        "Regular Academic Year Hours: 8:30 am to 12:00 am",
+        "Fine Annex",
+        "40.34569395391789",
+        "-74.65284160805919"
+    ],
+    ["Library", "Regular Academic Year Hours: 8:00 am to 11:45 pm", "Firestone Library", "40.349600521837914", "-74.6574558865342"],
+    ["Library", "Regular Academic Year Hours: 8:30 am to 12:00 am", "Lewis Library", "40.346157220112296", "-74.65275767571165" ],
+    ["Library", "Regular Academic Year Hours: 8:30 am to 11:45 pm", "Marquand Library of Art and Archaeology", "40.347395632270064", "-74.6581220111521"],
+    ["Library", "Regular Academic Year Hours: 8:30 am to 11:45 pm", "Mendel Music Library", "40.34727145676445", "-74.6559833771899"],
+    ["Library", "Regular Academic Year Hours: 9:00 am to 4:45 pm", "Seeley G. Mudd Manuscript Library", "40.3496236366864", "-74.65209485726962"],
+    ["Library", "Regular Academic Year Hours: 8:30 am to 12:00 am", "Stokes Library", "40.34924342695534", "-74.6536773605884"],
+    ["Library", "Regular Academic Year Hours: 10:00 am to 4:00 pm", "Forrestal Annex", "40.34745892853091", "-74.61351669379212"],
+    ["Library", "Regular Academic Year Hours: 10:00 am to 4:00 pm", "Harold P. Furth Plasma Physics Library", "40.349827637548664", "-74.60282259220082"],
+    ["Library", "This library is a high-density, environmentally-controlled shelving facility jointly owned and operated by Princeton, Columbia, and New York Public Library. Items housed at ReCAP are requested through the partners' library catalogs. Requests are processed daily by 3pm, and ship out to Manhattan overnight and twice daily to Princeton.", "Research Collections and Preservation Consortium (ReCAP) Library", "40.34421155339455", "-74.61415460200857"],
+
+]
+
+}

@@ -1,0 +1,68 @@
+{
+  "data": [
+    [
+      1,
+      "Whitman College",
+      "Lauritzen Hall",
+      "40.343651370277826",
+      "-74.65830671874755"
+    ],
+    [
+      2,
+      "Whitman College",
+      "S Baker Hall",
+      "40.343440223050116",
+      "-74.65819802672468"
+    ],
+    [
+      3,
+      "Whitman College",
+      "E Baker Hall",
+      "40.343518630486805",
+      "-74.65781046831285"
+    ],
+    [
+        4,
+        "Whitman College",
+        "1981 Hall",
+        "40.34365662178395",
+        "-74.65734108173524"
+    ],
+    [5, "Whitman College", "Community Hall", "40.34410943568719", "-74.65760930263673"],
+    [6, "Whitman College", "Hargadon Hall", "40.34382926467814", "-74.6583893544074"],
+    [7, "Whitman College", "Murley-Pivirotto Family Tower", "40.34396725533984", "-74.658406788766"],
+    [8, "Whitman College", "C Wendell Hall", "40.34407845537834", "-74.65806452603027"],
+    [9, "Whitman College", "B Wendell Hall", "40.34433808105978", "-74.65835956902191"],
+    [10, "Whitman College", "Fisher Hall", "40.344644724278304", "-74.65824155182526"],
+    [11, "Forbes College", "Main Hall", "40.34198295077953", "-74.66116745574129"],
+    [12, "Forbes College", "Courtyard Annex", "40.341508656631056", "-74.66058809859408"],
+    [13, "Forbes College", "New Wing", "40.3425512816173", "-74.66142494780672"],
+    [14, "Mathey College", "Blair Hall", "40.34743871819078", "-74.66135197731529"],
+    [15, "Mathey College", "Edwards Hall", "40.34714033876357", "-74.6592932245199"],
+    [16, "Mathey College", "Hamilton Hall", "40.34811837038152", "-74.6622374681757"],
+    [17, "Mathey College", "Joline Hall", "40.347881245293486", "-74.66202289145451"],
+    [18, "Mathey College", "Little Hall", "40.346635406345314", "-74.66004773080317"],
+    [19, "Butler College", "Yoseloff Hall", "40.34435392256029", "-74.6559933733351"],
+    [20, "Butler College", "Bogle Hall", "40.34429259376372", "-74.65555349105665"],
+    [21, "Butler College", "1976 Hall", "40.34460741432797", "-74.6554891180403"],
+    [22, "Butler College", "1915 Hall", "40.344725982731006", "-74.65692678207228"],
+    [23, "Butler College", "1967 Hall", "40.34392759233522", "-74.65576725343658"],
+    [24, "Butler College", "Bloomberg Hall", "40.343412294377785", "-74.65606927871704"],
+    [25, "Butler College", "Wilf Hall", "40.344393705357135", "-74.65513135153509"],
+    [26, "Rockefeller College", "Buyers Hall", "40.347420256252974", "-74.6608143182932"],
+    [27, "Rockefeller College", "Campbell Hall", "40.34807030851644", "-74.66123876793682"],
+    [28, "Rockefeller College", "Holder Hall", "40.34833605134832", "-74.66144261582195"],
+    [29, "Rockefeller College", "Witherspoon Hall", "40.3474611402278", "-74.6601176045686"],
+    [30, "Wilson College", "1927-Clapp Hall", "40.345170314270725", "-74.65577381039947"],
+    [31, "Wilson College", "1937 Hall", "40.345893300647", "-74.65615319354299"],
+    [32, "Wilson College", "1938 Hall", "40.34501426929545", "-74.65536998851064"],
+    [33, "Wilson College", "1939 Hall", "40.34532499796592", "-74.65649115187887"],
+    [34, "Wilson College", "Dodge-Osborn Hall", "40.34541903399195", "-74.65572940451864"],
+    [35, "Wilson College", "Feinberg Hall", "40.345795176785124", "-74.65653472953699"],
+    [36, "Wilson College", "Gauss Hall", "40.34510012867651", "-74.65667956882379"],
+    [37, "Wilson College", "Walker Hall", "40.3455376009684", "-74.6568619590368"],
+    [38, "Wilson College", "Wilcox Hall", "40.3448600101355", "-74.65595095265707"],
+
+]
+
+}

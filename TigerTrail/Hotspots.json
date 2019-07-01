@@ -1,0 +1,67 @@
+{
+  "data": [
+    [
+      "Hotspot",
+      "in Main Lobby (near elevator)",
+      "87 Prospect Avenue",
+      "40.34834888284192",
+      "-74.6488472320832"
+    ],
+    [
+      "Hotspot",
+      "in the OIT Hardware Support",
+      "171 Broadmead",
+      "40.347599",
+      "-74.644594"
+    ],
+    [
+      "Hotspot",
+      "1st Floor (near elevator)",
+      "185 Nassau Street",
+      "40.350638",
+      "-74.654850"
+    ],
+    [
+        "Hotspot",
+        "Public Safety, near Communications Center window",
+        "200 Elm",
+        "40.342772630520415",
+        "-74.65701201954221"
+    ],
+    ["Hotspot", "near Lobby", "228 Alexander Street", "40.3392545185307", "-74.65767861123936"],
+    ["Hotspot", "near Lobby", "306 Alexander Street", "40.33701651809077", "-74.65596663879813"],
+    ["Hotspot", "near Main entrance", "Andlinger Center for Energy & the Environment", "40.34948589070786", "-74.65096889626363"],
+    ["Hotspot", "in Chancellor Green Café", "Chancellor Green", "40.34891692911765", "-74.65852054935033"],
+    ["Hotspot", "in Main lobby", "Computer Science Building", "40.350151270723316", "-74.65220355114172"],
+    ["Hotspot", "near Exterior doors", "Denunzio Pool", "40.343882546316415", "-74.64738314257852"],
+    ["Hotspot", "near Lobby (west wall)", "Dillon Gym", "40.34610130964828", "-74.65904709722531"],
+    ["Hotspot", "near EQuad Café", "EQuad", "40.35069878908703", "-74.65145655362608"],
+    ["Hotspot", "near Front Desk", "Firestone Library", "40.34938063599707", "-74.65736337079113"],
+    ["Hotspot", "North wing entry main lobby & dining hall card checker station", "Forbes College (2)", "40.34194338013568", "-74.66103981266372"],
+    ["Hotspot", "Chemistry CaFe and B Level (near elevator)", "Frick Lab (2)", "40.34413869875605", "-74.65086410706954"],
+    ["Hotspot", "100 Level (north wall near Package Room (2)) & A Level (southwest entrance)", "Frist Campus Center (3)", "40.34677464653069", "-74.65554037574162"],
+    ["Hotspot", "Porter’s Lodge, mailboxes & Procter Hall", "Graduate College (2)", "40.34066351802573", "-74.66521524698612"],
+    ["Hotspot", "A, 1st & 3rd Floors (near elevator)", "Guyot Hall (3)", "40.34592471788462", "-74.65428292751312"],
+    ["Hotspot", "1st Floor (near elevator)", "Hoyt Lab", "40.34956205638699", "-74.65455125200674"],
+    ["Hotspot", "near Genomics Café", "Icahn Lab", "40.34428568741327", "-74.65315331967571"],
+    ["Hotspot", "near Lobby (east wall)", "Jadwin Gym", "40.343753884832715", "-74.64883197419715"],
+    ["Hotspot", "on 1st Floor", "Jadwin Hall", "40.34515927834612", "-74.6516920084839"],
+    ["Hotspot", "JRRB 144 (near elevator), JRRB 188 (near elevator), JRRB A44 (near elevator), JRRB A97 (near elevator)", "Julis Romo Rabinowtiz Building (4)", "40.349074825381585", "-74.65539872646332"],
+    ["Hotspot", "Forum Level ((2) near elevator 1 and elevator 4), 2nd Floor (near elevator 1), 3rd Floor (near elevator 4)", "Lewis Arts complex (4)", "40.34232012487003", "-74.65994789761828"],
+    ["Hotspot", "1st Floor (near rest rooms)", "Lewis Library", "40.34624491036757", "-74.65277193138218"],
+    ["Hotspot", "1st Floor (near room 119)", "Lewis Thomas Laboratory", "40.344969295677835", "-74.6536816330173"],
+    ["Hotspot", "Near Marquand Library", "McCormick Hall", "40.34709413809271", "-74.65787154764905"],
+    ["Hotspot", "Lower level (near maintenance shop)", "Moffett Hall", "40.34554083036309", "-74.65393735117033"],
+    ["Hotspot", "A Floor (TigerCard Office) & 5th Floor (Housing Office)", "New South (2)", "40.343306222682294", "-74.65894160463358"],
+    ["Hotspot", "on Each floor", "Princeton Neuroscience Institute", "40.34281568757948", "-74.65227439771331"],
+    ["Hotspot", "near Woodrow Wilson Café", "Robertson Hall", "40.34856051451613", "-74.65455336274181"],
+    ["Hotspot", "Madison Hall (2) & Witherspoon Hall (exterior entry #4)", "Rockefeller & Mathey Colleges (3)", "40.34838431151243", "-74.66250664793898"],
+    ["Hotspot", "Ground level (near elevator)", "Schultz", "40.34539432437168", "-74.65372572270553"],
+    ["Hotspot", "Ground level (near elevator) ", "West Garage", "40.3421908144912", "-74.65838925395963"],
+    ["Hotspot", "Community Hall", "Whitman College", "40.3441349964861", "-74.65787704828995"],
+    ["Hotspot", "in Wilcox Hall (front lobby)", "Wilson College", "40.344731180788315", "-74.65607852750884"],
+    ["Hotspot", "Exterior (north wall)", "Wright/Patton Arch", "40.34542226757681", "-74.65750026019316"],
+
+]
+
+}
