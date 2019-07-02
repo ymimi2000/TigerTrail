@@ -21,6 +21,8 @@
 		6658579422C5119600903403 /* TigerCardHotspotMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6658579322C5119600903403 /* TigerCardHotspotMap.swift */; };
 		6658579622C5133E00903403 /* ResidentialColleges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6658579522C5133E00903403 /* ResidentialColleges.swift */; };
 		6658579A22C516F500903403 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6658579922C516F500903403 /* NavigationController.swift */; };
+		DE331B7522CBCDF000E95104 /* campusdining.json in Resources */ = {isa = PBXBuildFile; fileRef = DE331B7422CBCDF000E95104 /* campusdining.json */; };
+		DE331B7722CBE40800E95104 /* CampusDining.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE331B7622CBE40800E95104 /* CampusDining.swift */; };
 		DEF1B6D222C5451E00F66989 /* libraries.json in Resources */ = {isa = PBXBuildFile; fileRef = DEF1B6D122C5451D00F66989 /* libraries.json */; };
 		DEF1B6D622C6972300F66989 /* LibrariesMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1B6D522C6972300F66989 /* LibrariesMap.swift */; };
 		DEF1B6D822C699D100F66989 /* EatingClubs.json in Resources */ = {isa = PBXBuildFile; fileRef = DEF1B6D722C699D100F66989 /* EatingClubs.json */; };
@@ -46,6 +48,8 @@
 		6658579322C5119600903403 /* TigerCardHotspotMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TigerCardHotspotMap.swift; sourceTree = "<group>"; };
 		6658579522C5133E00903403 /* ResidentialColleges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentialColleges.swift; sourceTree = "<group>"; };
 		6658579922C516F500903403 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		DE331B7422CBCDF000E95104 /* campusdining.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = campusdining.json; sourceTree = "<group>"; };
+		DE331B7622CBE40800E95104 /* CampusDining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusDining.swift; sourceTree = "<group>"; };
 		DEF1B6D122C5451D00F66989 /* libraries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libraries.json; sourceTree = "<group>"; };
 		DEF1B6D522C6972300F66989 /* LibrariesMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrariesMap.swift; sourceTree = "<group>"; };
 		DEF1B6D722C699D100F66989 /* EatingClubs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EatingClubs.json; path = ../../../../Downloads/EatingClubs.json; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 				6658579322C5119600903403 /* TigerCardHotspotMap.swift */,
 				DEF1B6D522C6972300F66989 /* LibrariesMap.swift */,
 				DEF1B6DB22C6A2C900F66989 /* EatingClubs.swift */,
+				DE331B7622CBE40800E95104 /* CampusDining.swift */,
 				6658577322C3C6D600903403 /* Main.storyboard */,
 				6658577822C3C6DA00903403 /* LaunchScreen.storyboard */,
 				6658578122C3CA4E00903403 /* Site.swift */,
@@ -103,6 +108,7 @@
 				6658578F22C50C6E00903403 /* ResColleges.json */,
 				DEF1B6D122C5451D00F66989 /* libraries.json */,
 				DEF1B6D722C699D100F66989 /* EatingClubs.json */,
+				DE331B7422CBCDF000E95104 /* campusdining.json */,
 				6658577B22C3C6DA00903403 /* Info.plist */,
 			);
 			path = TigerTrail;
@@ -171,6 +177,7 @@
 				6658579022C50C6E00903403 /* ResColleges.json in Resources */,
 				6658577A22C3C6DA00903403 /* LaunchScreen.storyboard in Resources */,
 				6658578822C3E89E00903403 /* ComputerClusters.json in Resources */,
+				DE331B7522CBCDF000E95104 /* campusdining.json in Resources */,
 				6658578E22C50C5F00903403 /* Hotspots.json in Resources */,
 				DEF1B6DA22C6A1BC00F66989 /* Assets.xcassets in Resources */,
 				6658577522C3C6D600903403 /* Main.storyboard in Resources */,
@@ -187,6 +194,7 @@
 				6658579422C5119600903403 /* TigerCardHotspotMap.swift in Sources */,
 				6658578422C3CAAD00903403 /* CustomButton.swift in Sources */,
 				6658579222C50C7E00903403 /* SiteViews.swift in Sources */,
+				DE331B7722CBE40800E95104 /* CampusDining.swift in Sources */,
 				6658577222C3C6D600903403 /* Home.swift in Sources */,
 				DEF1B6DC22C6A2C900F66989 /* EatingClubs.swift in Sources */,
 				DEF1B6D622C6972300F66989 /* LibrariesMap.swift in Sources */,

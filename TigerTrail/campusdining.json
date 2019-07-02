@@ -1,0 +1,65 @@
+{
+  "data": [
+    [
+      "Campus Dining",
+      "The Center for Jewish Life houses a kosher dining hall on its first floor that is supervised by the Orthodox Union.",
+      "Center for Jewish Life",
+      "40.346607265075015",
+      "-74.65374820754852"
+    ],
+    [
+      "Campus Dining",
+      "The dining hall in Forbes College overlooks the Springdale Golf Course. Students can enjoy outdoor seating during nice weather.",
+      "Forbes College",
+      "40.341790882434864",
+      "-74.66102752173191"
+    ],
+    [
+      "Campus Dining",
+      "The dining hall is located in Wilcox Hall and shares a servery with Butler College.",
+      "Wilson College",
+      "40.34475427439045",
+      "-74.65622774314858"
+    ],
+    [
+        "Campus Dining",
+        "The Graduate College dining hall is located in Procter Hall in the Old Graduate College.",
+        "Graduate College",
+        "40.34035893727051",
+        "-74.6654851220012"
+    ],
+    ["Campus Dining", "The Mathey College dining hall shares a servery with the Rockefeller College dining hall.", "Mathey College", "40.34858741363182", "-74.66240140366796"],
+    
+    ["Campus Dining", "The dining hall in Whitman College features a cathedral ceiling and a wide variety of specialty dishes throughout the year.", "Whitman College", "40.34412201629754", "-74.65762068762814" ],
+    
+    ["Campus Dining", "The Rockefeller College dining hall shares a servery with the Mathey College dining hall.", "Rockefeller College", "40.348551882446756", "-74.66216804341713"],
+    
+    ["Campus Dining", "The dining hall is located in Wu Hall and shares a servery with Wilson College.", "Butler College", "40.344631615163905", "-74.65645593815162"],
+    
+    ["Campus Dining", "Located in the lower level of 1967 Hall at Butler College, Studio '34 is a self-service cafe, serving hot and cold food items in a contemporary setting featuring indoor and patio seating. Daily items include pizza, hot dogs, sandwiches, sushi, coffee, and other snacks and sundries.", "Studio '34", "40.34451685052203", "-74.6556209440206"],
+    
+    ["Campus Dining", "Chancellor Green Cafe serves Small World Roasters coffee, Tazo®  teas, fresh pastries, sandwiches, salads, wraps, soup and sushi in a cafe setting. Hot entrées are prepared daily.", "Chancellor Green Cafe", "40.34906729907833", "-74.65856076077824"],
+    
+    ["Campus Dining", "Located in the Icahn Laboratory, Genomics Cafe serves coffee drinks, as well as fresh pastries, sandwiches, salads, wraps, soup and sushi. Hot entrées are prepared daily.", "Genomics Cafe", "40.344224111206586", "-74.65313907141285"],
+
+    ["Campus Dining", "Located on level 100 of the Louis A. Simpson International Building, the Atrium Cafe serves gourmet espresso and coffee drinks, as well as fresh pastries, sandwiches, salads, wraps, soup and sushi. For a limited time, stop by and try our new salad bar!", "Atrium Cafe", "40.34928805171933", "-74.65480418189867"],
+    
+    ["Campus Dining", "Located in the Engineering Quad C Wing, EQuad Cafe serves gourmet espresso and coffee drinks, as well as fresh pastries, sandwiches, salads, wraps, soup and sushi. Hot entrées are prepared daily.", "EQuad Cafe", "40.35050874446704", "-74.65136303972236"],
+
+    ["Campus Dining", "Café 701 is an informal self-service café located in the first floor of 701 Carnegie Center. Prepared sandwiches, salads, soups, hot entrees, Small World coffee and espresso and a selection of otherbeverages are available to students, staff, faculty and visitors.", "Café 701", "40.323326", "-74.649857"],
+
+    ["Campus Dining", "Prospect offers an exceptional dining experience to its patrons. With the added beauty of the surrounding grounds and garden, which boast an impressive history of their own, Prospect provides a unique setting for group meals, coffee hours and meetings.", "Prospect House", "40.346975738933395", "-74.65646843341597"],
+
+    ["Campus Dining", "Located in the sky-lit atrium of the Frick Chemistry Building, Chemistry CaFe offers a continental style breakfast including Small World Roasters coffee, Tazo® teas, and fresh pastries. Lunches include a hot entree and a selection of sandwiches and salads in the Grab-n-Go area.", "Chemistry CaFe", "40.34363597455201", "-74.65061959651314"],
+    
+    ["Campus Dining", "Witherspoon's, located on the 100 level of the Frist Campus Center, features Small World Coffee, fresh pastries, and ice cream from the bent spoon. Eat in or take out.", "Witherspoon's", "40.34680218704373", "-74.65528620281026"],
+
+    ["Campus Dining", "The C-Store is a great place to stop between classes or late at night for a quick snack or refreshing drink. Various sundries are also sold here for your convenience. The C-Store is located at the 100 level of the Frist Campus Center, next to the TV lounge.", "Convenience Store (C-Store)", "40.34650704142888", "-74.6555624703388"],
+
+    ["Campus Dining", "Located on the 100 Level of Frist Campus Center, Cafe Vivian offers organic, sustainable and local food in a relaxed environmentally conscious atmosphere.", "Cafe Vivian", "40.34691973429282", "-74.65475138903514"],
+
+    ["Campus Dining", "The Food Gallery, located in the heart of the Frist Campus Center, features home-cooking favorites at Food for Thought, charcoal-grilled items at The Grill, Mexican fare at Ole!, as well as pizza, pasta, deli, and salad options. Our grab 'n go sections feature ready-made sandwiches, salads, drinks and snacks.", "Food Gallery at Frist", "40.346451607541304", "-74.654906957158"]
+
+]
+
+}

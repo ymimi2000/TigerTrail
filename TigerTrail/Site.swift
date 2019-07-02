@@ -105,7 +105,8 @@ class Site: NSObject, MKAnnotation {
         if title == "Cottage Club" { return "cottage" }
         if title == "Ivy Club" { return "ivy" }
         if title == "Quadrangle Club" { return "quad" }
-        
+        if isEqual(type: String.self, a: type, b: "Campus Dining") { return "din" }
+
 
         
         return "whit"
