@@ -2,8 +2,8 @@
 //  ComputerClusters.swift
 //  TigerTrail
 //
-//  Created by Will Stevens on 6/26/19.
-//  Copyright © 2019 Mwad Saleh SPE. All rights reserved.
+//  Created by Yazan Mimi on 6/26/19.
+//  Copyright © 2019 Yazan Mimi SPE. All rights reserved.
 //
 
 import Foundation
@@ -12,15 +12,34 @@ import MapKit
 import Contacts
 import CoreLocation
 
+
+
 class ResidentialColleges: UIViewController {
     
+    var selectedPin:MKPlacemark? = nil
     
-    @IBOutlet var mapView: MKMapView!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    @IBOutlet weak var controller: UISegmentedControl!
+    
+    @IBAction func ChangeLbl(_ sender: Any) {
+        
+        if controller.selectedSegmentIndex == 0 {
+            self.mapView.mapType = .standard
+        }
+        if controller.selectedSegmentIndex == 1 {
+            self.mapView.mapType = .hybrid
+        }
+
+    }
+
     // Defines the distance covered by the initial map from the center
     let distFromCenter: CLLocationDistance = 1000
     
     // creates an array of Sites
     var sites: [Site] = []
+    
+    var resultSearchController:UISearchController? = nil
     
     // location manager reference
     let locationManager = CLLocationManager()
@@ -36,6 +55,7 @@ class ResidentialColleges: UIViewController {
     
     func setupLocationManager() {
         locationManager.delegate = self
+        
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
@@ -103,6 +123,14 @@ class ResidentialColleges: UIViewController {
         sites.append(contentsOf: validWorks)
     }
     
+    @objc func getDirections(){
+        if let selectedPin = selectedPin {
+            let mapItem = MKMapItem(placemark: selectedPin)
+            let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking]
+            mapItem.openInMaps(launchOptions: launchOptions)
+        }
+    }
+    
     
     // main
     override func viewDidLoad() {
@@ -120,11 +148,27 @@ class ResidentialColleges: UIViewController {
         loadSavedData()
         mapView.addAnnotations(sites)
         checkLocationServices()
+        
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
+        
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search for places"
+        navigationItem.titleView = resultSearchController?.searchBar
+        
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
+        
+        locationSearchTable.mapView = mapView
+        
+        locationSearchTable.handleMapSearchDelegate = self
+        
+        
+        
     }
-    
-    
-    
-    
 }
 
 
@@ -159,6 +203,65 @@ extension ResidentialColleges: MKMapViewDelegate {
         location.mapItem().openInMaps(launchOptions: launchOptions)
     }
     
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+        
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
+        if annotation is MKUserLocation {
+            //return nil so map view draws "blue dot" for standard user location
+            return nil
+        }
+        let reuseId = "pin"
+        let pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? SiteViews
+        //        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+        //        pinView?.pinTintColor = UIColor.orange
+        //
+        //        pinView?.image = UIImage(contentsOfFile: "cap")
+        //
+        ////        pinView?.image: String? {
+        ////
+        ////            if annotaion.title == "Campus Club" { return "campus" }
+        ////            if title == "Cap & Gown Club" { return "cap" }
+        ////            if title == "Cloister Inn" { return "cloister" }
+        ////            if title == "Tiger Inn" { return "ti" }
+        ////            if title == "Cannon Dial Elm Club" { return "cannon" }
+        ////            if title == "Charter Club" { return "charter" }
+        ////            if title == "Colonial Club" { return "colonial" }
+        ////            if title == "Terrace Club" { return "terrace" }
+        ////            if title == "Tower Club" { return "tower" }
+        ////            if title == "Cottage Club" { return "cottage" }
+        ////            if title == "Ivy Club" { return "ivy" }
+        ////            if title == "Quadrangle Club" { return "quad" }
+        ////            if isEqual(type: String.self, a: type, b: "Campus Dining") { return "din" }
+        ////
+        ////
+        ////
+        ////            return "whit"
+        ////        }
+        //
+        //
+        //
+        pinView?.canShowCallout = true
+        
+        let smallSquare = CGSize(width: 30, height: 30)
+        let button = UIButton(frame: CGRect(origin: .zero, size: smallSquare))
+        button.setBackgroundImage(UIImage(named: "Maps-icon"), for: .normal)
+        button.addTarget(self, action: #selector((getDirections)), for: .touchUpInside)
+        pinView?.leftCalloutAccessoryView = button
+        return pinView
+    }
+    
     
 }
 
@@ -175,10 +278,48 @@ extension ResidentialColleges: CLLocationManagerDelegate {
     
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
         checkLocationAuthorization()
     }
     
 }
+
+extension ResidentialColleges: HandleMapSearch {
+    func dropPinZoomIn(placemark:MKPlacemark){
+        // cache the pin
+        selectedPin = placemark
+        // clear existing pins
+        mapView.removeAnnotations(mapView.annotations)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        annotation.title = placemark.name
+        let street = placemark.postalAddress?.street
+        let city = placemark.postalAddress?.city
+        let state = placemark.administrativeArea
+        
+        
+        
+        annotation.subtitle = "\(street ?? ""), \(city ?? "") \(state ?? "")"
+        
+        
+        let ann = Site.init(title: annotation.title!, locationName: annotation.subtitle ?? "", discipline: "", coordinate: CLLocationCoordinate2D(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude))
+        
+        
+        mapView.addAnnotation(ann)
+        if mapView.annotations[0].title == "My Location" {
+            mapView.selectAnnotation(mapView.annotations[1], animated: false)
+        }
+        else {
+            mapView.selectAnnotation(mapView.annotations[0], animated: false)
+        }
+        let span = MKCoordinateSpan(latitudeDelta: 0.008, longitudeDelta: 0.008)
+        let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
+        mapView.setRegion(region, animated: true)
+    }
+}
+
+
+
 /*
  // MARK: - Navigation
  

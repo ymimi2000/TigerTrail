@@ -2,8 +2,8 @@
 //  Site.swift
 //  TigerTrail
 //
-//  Created by Will Stevens on 6/26/19.
-//  Copyright © 2019 Mwad Saleh SPE. All rights reserved.
+//  Created by Yazan Mimi on 6/26/19.
+//  Copyright © 2019 Yazan Mimi SPE. All rights reserved.
 //
 
 import Foundation
@@ -17,7 +17,7 @@ class Site: NSObject, MKAnnotation {
     let locationName: String
     let discipline: String
     let coordinate: CLLocationCoordinate2D
-    let type: Any
+    var type: Any
     
     init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D) {
         self.title = title
@@ -93,23 +93,23 @@ class Site: NSObject, MKAnnotation {
         if isEqual(type: String.self, a: type, b: "Hotspot") { return "hotspot" }
         if locationName == "Computer Cluster" { return "cos" }
         if isEqual(type: String.self, a: type, b: "Library") { return "library" }
-        if title == "Campus Club" { return "campus" }
+        if title == "Princeton Campus Club" { return "campus" }
         if title == "Cap & Gown Club" { return "cap" }
         if title == "Cloister Inn" { return "cloister" }
         if title == "Tiger Inn" { return "ti" }
         if title == "Cannon Dial Elm Club" { return "cannon" }
-        if title == "Charter Club" { return "charter" }
-        if title == "Colonial Club" { return "colonial" }
-        if title == "Terrace Club" { return "terrace" }
-        if title == "Tower Club" { return "tower" }
+        if title == "Princeton Charter Club" { return "charter" }
+        if title == "The Colonial Club of Princeton University" { return "colonial" }
+        if title == "Terrace F. Club" { return "terrace" }
+        if title == "Princeton Tower Club" { return "tower" }
         if title == "Cottage Club" { return "cottage" }
-        if title == "Ivy Club" { return "ivy" }
-        if title == "Quadrangle Club" { return "quad" }
+        if title == "The Ivy Club" { return "ivy" }
+        if title == "Princeton Quadrangle Club" { return "quad" }
         if isEqual(type: String.self, a: type, b: "Campus Dining") { return "din" }
 
 
         
-        return "whit"
+        return "pin"
     }
     
     

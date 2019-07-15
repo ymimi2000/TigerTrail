@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  TigerTrail
 //
-//  Created by Will Stevens on 6/26/19.
-//  Copyright © 2019 Mwad Saleh SPE. All rights reserved.
+//  Created by Yazan Mimi on 6/26/19.
+//  Copyright © 2019 Yazan Mimi SPE. All rights reserved.
 //
 
 import UIKit
