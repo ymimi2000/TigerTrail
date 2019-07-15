@@ -29,8 +29,10 @@ class Create: UIViewController, UITableViewDelegate, UITableViewDataSource, AVSp
     var instructionsArray: [String] = []
     
     
+    @IBOutlet weak var instructions: UILabel!
     
     
+    @IBOutlet weak var lock: UILabel!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return instructionsArray.count
@@ -149,6 +151,7 @@ class Create: UIViewController, UITableViewDelegate, UITableViewDataSource, AVSp
         
         anntitle.isHidden = true
         anntitle.isEnabled = true
+//        instructions.isHidden = true
         titlebool = true
 
     }
@@ -183,6 +186,7 @@ class Create: UIViewController, UITableViewDelegate, UITableViewDataSource, AVSp
         
         annsubtitle.isHidden = true
         annsubtitle.isEnabled = true
+        instructions.isHidden = true
         subtitlebool = true
 
     }
@@ -474,11 +478,22 @@ class Create: UIViewController, UITableViewDelegate, UITableViewDataSource, AVSp
         anntitle.isEnabled = true
         annsubtitle.isEnabled = true
         annsubtitle.isHidden = false
+        instructions.isHidden = false
         
+        lock.isHidden = true
+
         
         if titlebool == true && subtitlebool == true {
             addAnnotationhelper(coordinates: newCoordinates, title: anntitle.text ?? "", subtitle: annsubtitle.text ?? "")
         }
+        else {
+            return
+        }
+
+        anntitle.isHidden = true
+        anntitle.isEnabled = false
+        annsubtitle.isEnabled = false
+        annsubtitle.isHidden = true
 
         
     }
@@ -496,6 +511,8 @@ class Create: UIViewController, UITableViewDelegate, UITableViewDataSource, AVSp
         titlebool = false
         subtitlebool = false
         mapView.selectAnnotation(ann, animated: false)
+        
+
 
     }
     

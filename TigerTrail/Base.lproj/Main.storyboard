@@ -416,10 +416,10 @@
                                 </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="T42-l4-dij">
-                                <rect key="frame" x="107" y="723.5" width="200" height="0.0"/>
+                                <rect key="frame" x="57" y="723.5" width="300" height="0.0"/>
                                 <subviews>
                                     <textField hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Annotation Title" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="o5n-48-uex">
-                                        <rect key="frame" x="0.0" y="0.0" width="145" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="784.5" height="0.0"/>
                                         <color key="textColor" red="0.032235343009233475" green="0.012679551728069782" blue="0.0086128944531083107" alpha="0.33550941780821919" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -428,7 +428,7 @@
                                         </connections>
                                     </textField>
                                     <textField hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Annotation Subtitle" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SK4-t4-4Jn">
-                                        <rect key="frame" x="0.0" y="0.0" width="145" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="784.5" height="0.0"/>
                                         <color key="textColor" red="0.032235343009233475" green="0.012679551728069782" blue="0.0086128944531083107" alpha="0.34000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -437,11 +437,23 @@
                                             <action selector="annsubtitleaction:" destination="Zmg-Wj-EDs" eventType="editingDidEndOnExit" id="l59-7g-szw"/>
                                         </connections>
                                     </textField>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Title, Subtitle, then Press &amp; Hold Anywhere on Map to Add Annotation with specified details." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzm-ho-VtA">
+                                        <rect key="frame" x="0.0" y="0.0" width="784.5" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="FJZ-yM-Dkl"/>
+                                    <constraint firstAttribute="width" constant="300" id="FJZ-yM-Dkl"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press &amp; Hold for 2 Seconds to Enter Edit Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbE-s3-bpq">
+                                <rect key="frame" x="14" y="438" width="386.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -449,6 +461,8 @@
                             <constraint firstItem="PDp-hD-pxB" firstAttribute="trailing" secondItem="Xyh-WN-6hY" secondAttribute="trailing" id="5S3-rx-Ei1"/>
                             <constraint firstItem="FZZ-K3-Xcy" firstAttribute="leading" secondItem="Xyh-WN-6hY" secondAttribute="leading" id="A7b-gp-6E0"/>
                             <constraint firstItem="Xyh-WN-6hY" firstAttribute="bottom" secondItem="PDp-hD-pxB" secondAttribute="bottom" constant="25" id="FKF-2j-4r0"/>
+                            <constraint firstItem="JbE-s3-bpq" firstAttribute="centerX" secondItem="A0R-ix-Ehd" secondAttribute="centerX" id="GZJ-EE-th4"/>
+                            <constraint firstItem="JbE-s3-bpq" firstAttribute="centerY" secondItem="A0R-ix-Ehd" secondAttribute="centerY" id="Lrv-QY-Tq4"/>
                             <constraint firstAttribute="trailing" secondItem="x4P-wi-UzT" secondAttribute="trailing" id="VSj-2G-Tv1"/>
                             <constraint firstAttribute="bottom" secondItem="x4P-wi-UzT" secondAttribute="bottom" id="VcS-BD-XkE"/>
                             <constraint firstItem="Qmh-MV-Smf" firstAttribute="top" secondItem="FZZ-K3-Xcy" secondAttribute="bottom" constant="5" id="X7I-TG-co1"/>
@@ -470,6 +484,8 @@
                         <outlet property="anntitle" destination="o5n-48-uex" id="OxV-Ef-nku"/>
                         <outlet property="controller" destination="N3R-zC-cWg" id="a8z-It-O6C"/>
                         <outlet property="infoTable" destination="ACF-8J-Cs1" id="nlC-v2-gGo"/>
+                        <outlet property="instructions" destination="qzm-ho-VtA" id="Ffo-jg-Kfp"/>
+                        <outlet property="lock" destination="JbE-s3-bpq" id="j41-9I-Vsf"/>
                         <outlet property="mapView" destination="x4P-wi-UzT" id="GVo-yr-p1b"/>
                         <outlet property="mode" destination="FZZ-K3-Xcy" id="cRT-EN-ejO"/>
                         <outlet property="toLbl" destination="Qmh-MV-Smf" id="eHb-E6-sqg"/>
