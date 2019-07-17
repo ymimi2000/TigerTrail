@@ -31,6 +31,7 @@ class Create: UIViewController, UITableViewDelegate, UITableViewDataSource, AVSp
     
     @IBOutlet weak var instructions: UILabel!
     
+    @IBOutlet weak var upload: UIButton!
     
     @IBOutlet weak var lock: UILabel!
     
@@ -50,7 +51,45 @@ class Create: UIViewController, UITableViewDelegate, UITableViewDataSource, AVSp
         
     }
     
+    @IBAction func uploadaction(_ sender: Any) {
+        
+        var aofa : [[Any]] = [[]]
+        
+        
+        
+        for i in 0...(mapView.annotations.count - 1) {
+            if mapView.annotations[i].title != "My Location" {
+            aofa.append([i, mapView.annotations[i].subtitle as Any, mapView.annotations[i].title as Any, mapView.annotations[i].coordinate.latitude, mapView.annotations[i].coordinate.longitude])
+            }
+        }
+        
+        aofa.remove(at: 0)
+        
+        var dictonary : [String : [[Any]]] = ["data" : aofa]
+        
+        if let jsonData = try? JSONSerialization.data(withJSONObject: dictonary, options: []) as? Data
+        {
+            // Check if everything went well
+            print(NSString(data: jsonData, encoding: 1)!)
+//            let str = jsonData.description
+//            let data = str.data(using: String.Encoding.utf8)
+//
+//            if let file = FileHandle(forWritingAtPath: "Assets.xcassets/file.json") {
+//                file.write(data!)
+//            }
+
+            // Do something cool with the new JSON data
+        }
+
+
+    }
     
+    
+    
+    
+    @IBOutlet weak var editLbl: UILabel!
+    
+    @IBOutlet weak var editSwitch: UISwitch!
     
     @IBOutlet weak var controller: UISegmentedControl!
     
@@ -88,6 +127,13 @@ class Create: UIViewController, UITableViewDelegate, UITableViewDataSource, AVSp
     @IBOutlet weak var Go: UIButton!
     
     @IBOutlet weak var infoTable: UITableView!
+    
+    
+    
+    
+    
+    
+    
     
     let synth = AVSpeechSynthesizer()
     
@@ -130,6 +176,24 @@ class Create: UIViewController, UITableViewDelegate, UITableViewDataSource, AVSp
         
     }
     
+    @IBAction func editswitchaction(_ sender: Any) {
+        if editSwitch.isOn == true {
+            anntitle.isHidden = false
+            anntitle.isEnabled = true
+            annsubtitle.isEnabled = true
+            annsubtitle.isHidden = false
+            instructions.isHidden = false
+
+        }
+        else {
+            anntitle.isHidden = true
+            anntitle.isEnabled = false
+            annsubtitle.isEnabled = false
+            annsubtitle.isHidden = true
+            instructions.isHidden = true
+
+        }
+    }
     
     
     
@@ -481,6 +545,12 @@ class Create: UIViewController, UITableViewDelegate, UITableViewDataSource, AVSp
         instructions.isHidden = false
         
         lock.isHidden = true
+        upload.isHidden = false
+        upload.isEnabled = true
+        
+        editLbl.isHidden = false
+        editSwitch.isHidden = false
+        
 
         
         if titlebool == true && subtitlebool == true {

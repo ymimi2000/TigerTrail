@@ -17,7 +17,47 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background2" translatesAutoresizingMaskIntoConstraints="NO" id="6H5-EV-LWe">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMo-mV-Swg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TigerPaw" translatesAutoresizingMaskIntoConstraints="NO" id="QJU-eb-qe6">
+                                        <rect key="frame" x="127" y="238" width="160" height="160"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="160" id="EJX-kw-zTQ"/>
+                                            <constraint firstAttribute="width" constant="160" id="cuP-Do-tdx"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TigerTrail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHq-Rz-3Vb">
+                                        <rect key="frame" x="110.5" y="418" width="193" height="60"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="46"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.039517220109701157" green="0.03692193329334259" blue="0.017984740436077118" alpha="0.77000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="CHq-Rz-3Vb" firstAttribute="centerY" secondItem="eMo-mV-Swg" secondAttribute="centerY" id="AVd-61-P6J"/>
+                                    <constraint firstItem="CHq-Rz-3Vb" firstAttribute="top" secondItem="QJU-eb-qe6" secondAttribute="bottom" constant="20" id="Apz-Sf-qPz"/>
+                                    <constraint firstItem="QJU-eb-qe6" firstAttribute="centerX" secondItem="eMo-mV-Swg" secondAttribute="centerX" id="YQJ-rf-fcC"/>
+                                    <constraint firstItem="CHq-Rz-3Vb" firstAttribute="centerX" secondItem="eMo-mV-Swg" secondAttribute="centerX" id="rsy-ZL-GFd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6H5-EV-LWe" secondAttribute="bottom" id="3jn-zj-BWV"/>
+                            <constraint firstAttribute="trailing" secondItem="eMo-mV-Swg" secondAttribute="trailing" id="HkY-HL-E73"/>
+                            <constraint firstItem="6H5-EV-LWe" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="NJg-JO-DTA"/>
+                            <constraint firstItem="6H5-EV-LWe" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="RKi-Bn-7gv"/>
+                            <constraint firstAttribute="trailing" secondItem="6H5-EV-LWe" secondAttribute="trailing" id="YrC-6l-oxh"/>
+                            <constraint firstItem="eMo-mV-Swg" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Z6R-Os-fI4"/>
+                            <constraint firstItem="eMo-mV-Swg" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="nn2-x2-EH3"/>
+                            <constraint firstAttribute="bottom" secondItem="eMo-mV-Swg" secondAttribute="bottom" id="sEA-dl-hnM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -26,4 +66,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background2" width="341" height="256"/>
+        <image name="TigerPaw" width="1522.5" height="1478"/>
+    </resources>
 </document>

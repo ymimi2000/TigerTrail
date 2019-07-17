@@ -11,14 +11,44 @@ import UIKit
 import MapKit
 import Contacts
 import CoreLocation
+import AVFoundation
 
-class LibrariesMap: UIViewController {
+
+class LibrariesMap: UIViewController, UITableViewDelegate, UITableViewDataSource, AVSpeechSynthesizerDelegate {
+    
     
     var selectedPin:MKPlacemark? = nil
     
-    @IBOutlet weak var mapView: MKMapView!
+    var directionsArray: [MKDirections] = []
+    
+    var coordinateto : CLLocationCoordinate2D? = nil
+    
+    var instructionsArray1: [MKRoute.Step] = []
+    var instructionsArray: [String] = []
+    
+    
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return instructionsArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as UITableViewCell
+        
+        cell.textLabel!.numberOfLines = 0;
+        cell.textLabel?.lineBreakMode = .byWordWrapping
+        
+        cell.textLabel?.text = instructionsArray[indexPath.row]
+        
+        return cell
+        
+    }
+    
     
     @IBOutlet weak var controller: UISegmentedControl!
+    
     
     @IBAction func ChangeLbl(_ sender: Any) {
         if controller.selectedSegmentIndex == 0 {
@@ -30,7 +60,71 @@ class LibrariesMap: UIViewController {
 
     }
     
+    
+    @IBOutlet weak var toLbl: UILabel!
+    
+    @IBOutlet weak var mode: UISegmentedControl!
+    
+    @IBAction func modea(_ sender: Any) {
+        if mode.selectedSegmentIndex == 0 {
+            getDirections(to: coordinateto!)
+        }
+        
+        if mode.selectedSegmentIndex == 1 {
+            getDirections(to: coordinateto!)
+        }
 
+    }
+    
+    
+    
+    @IBOutlet weak var Go: UIButton!
+    
+    @IBOutlet weak var infoTable: UITableView!
+    
+    
+    let synth = AVSpeechSynthesizer()
+    
+    
+    @IBAction func GoClicked(_ sender: Any) {
+        var stringsi = ""
+        for string in instructionsArray {
+            let stringa = "\(string). "
+            stringsi.append(stringa)
+        }
+        
+        stringsi.removeFirst()
+        stringsi.removeFirst()
+        
+        let utterance = AVSpeechUtterance(string: stringsi)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        //        utterance.rate = 0.4
+        
+        if String(Go.title(for: .normal)!) == "Go" {
+            infoTable.isHidden = false
+            infoTable.isUserInteractionEnabled = true
+            synth.speak(utterance)
+            
+            Go.setTitle("End", for: .normal)
+            Go.setBackgroundImage(UIImage(named: "red"), for: .normal)
+            
+        }
+        else {
+            infoTable.isHidden = true
+            infoTable.isUserInteractionEnabled = false
+            Go.setTitle("Go", for: .normal)
+            Go.setBackgroundImage(UIImage(named: "green"), for: .normal)
+            
+            synth.stopSpeaking(at: .immediate)
+            
+        }
+
+    }
+    
+
+
+    @IBOutlet weak var mapView: MKMapView!
+    
     // Defines the distance covered by the initial map from the center
     let distFromCenter: CLLocationDistance = 1000
     
@@ -121,18 +215,216 @@ class LibrariesMap: UIViewController {
         sites.append(contentsOf: validWorks)
     }
     
-    @objc func getDirections(){
-        if let selectedPin = selectedPin {
-            let mapItem = MKMapItem(placemark: selectedPin)
-            let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking]
-            mapItem.openInMaps(launchOptions: launchOptions)
+    func getCenterLocation(for mapView: MKMapView) -> CLLocation {
+        let latitude = mapView.centerCoordinate.latitude
+        let longitude = mapView.centerCoordinate.longitude
+        
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
+    
+    func round(_ num: Double, to places: Int) -> Double {
+        let p = log10(abs(num))
+        let f = pow(10, p.rounded() - Double(places) + 1)
+        let rnum = (num / f).rounded() * f
+        
+        return rnum
+    }
+    
+    
+    struct ReversedGeoLocation {
+        let name: String            // eg. Apple Inc.
+        let streetName: String      // eg. Infinite Loop
+        let streetNumber: String    // eg. 1
+        let city: String            // eg. Cupertino
+        let state: String           // eg. CA
+        let zipCode: String         // eg. 95014
+        let country: String         // eg. United States
+        let isoCountryCode: String  // eg. US
+        
+        var formattedAddress: String {
+            return """
+            \(name),
+            \(streetNumber) \(streetName),
+            \(city), \(state) \(zipCode)
+            \(country)
+            """
         }
+        
+        // Handle optionals as needed
+        init(with placemark: CLPlacemark) {
+            self.name           = placemark.name ?? ""
+            self.streetName     = placemark.thoroughfare ?? ""
+            self.streetNumber   = placemark.subThoroughfare ?? ""
+            self.city           = placemark.locality ?? ""
+            self.state          = placemark.administrativeArea ?? ""
+            self.zipCode        = placemark.postalCode ?? ""
+            self.country        = placemark.country ?? ""
+            self.isoCountryCode = placemark.isoCountryCode ?? ""
+        }
+    }
+    
+    
+    
+    
+    @objc func getDirections(to coordinate2: CLLocationCoordinate2D){
+        //        if let selectedPin = selectedPin {
+        //            let mapItem = MKMapItem(placemark: selectedPin)
+        //            let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking]
+        //            mapItem.openInMaps(launchOptions: launchOptions)
+        //        }
+        guard let location = locationManager.location?.coordinate else {
+            return
+        }
+        let request = createDirectionsRequest(from: location, to: coordinate2)
+        
+        coordinateto = coordinate2
+        
+        let directions = MKDirections(request: request)
+        resetMapView(withNew: directions)
+        
+        directions.calculate { [unowned self] (response, error) in
+            //TODO: Handle error if needed
+            guard let response = response else { return } //TODO: Show response not available in an alert
+            
+            for route in response.routes {
+                self.mapView.addOverlay(route.polyline)
+                
+                let siz = MKMapSize(width: route.polyline.boundingMapRect.width + 1000, height: route.polyline.boundingMapRect.height + 1000)
+                let po = MKMapPoint(x: route.polyline.boundingMapRect.origin.x - 200, y: route.polyline.boundingMapRect.origin.y - 200)
+                let ret = MKMapRect(origin: po, size: siz)
+                self.mapView.setVisibleMapRect(ret, animated: true)
+                
+                self.toLbl.isHidden = false
+                self.mode.isHidden = false
+                self.Go.isHidden = false
+                self.Go.isEnabled = true
+                
+                self.instructionsArray1 = route.steps
+                
+                
+                
+                if self.instructionsArray1.count > 0 {
+                    for i in 0...(self.instructionsArray1.count - 1) {
+                        self.instructionsArray.append("")
+                        self.instructionsArray[i] = self.instructionsArray1[i].instructions
+                    }
+                }
+                self.infoTable.reloadData()
+                
+                
+                let di = Double(route.distance)*0.000621371
+                
+                var dis = ""
+                
+                if String(di).count > 6 {
+                    dis = String(String(di).prefix(6))
+                }
+                else { dis = String(di)
+                }
+                
+                let ti = Double(route.expectedTravelTime)/60.0
+                
+                var tis = ""
+                
+                if String(ti).count > 6 {
+                    tis = String(String(ti).prefix(6))
+                }
+                else { tis = String(ti)
+                }
+                
+                
+                CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: coordinate2.latitude, longitude: coordinate2.longitude)) { placemarks, error in
+                    
+                    guard let placemark = placemarks?.first else {
+                        let errorString = error?.localizedDescription ?? "Unexpected Error"
+                        print("Unable to reverse geocode the given location. Error: \(errorString)")
+                        return
+                    }
+                    
+                    let reversedGeoLocation = ReversedGeoLocation(with: placemark)
+                    // Apple Inc.,
+                    // 1 Infinite Loop,
+                    // Cupertino, CA 95014
+                    // United States
+                    self.toLbl.text = "   To: \(reversedGeoLocation.streetNumber) \(reversedGeoLocation.streetName)   \n   Distance: \(dis) miles   \n   Expected Time: \(tis) minutes   "
+                    
+                }
+                
+                
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+        renderer.strokeColor = UIColor(red: 0.0, green: 122/255.0, blue: 255/255.0, alpha: 0.6)
+        
+        return renderer
+    }
+    
+    
+    func createDirectionsRequest(from coordinate: CLLocationCoordinate2D, to coordinate2: CLLocationCoordinate2D) -> MKDirections.Request {
+        let destinationCoordinate       = coordinate2
+        let startingLocation            = MKPlacemark(coordinate: coordinate)
+        let destination                 = MKPlacemark(coordinate: destinationCoordinate)
+        
+        let request                     = MKDirections.Request()
+        request.source                  = MKMapItem(placemark: startingLocation)
+        request.destination             = MKMapItem(placemark: destination)
+        
+        //        request.transportType           = .walking
+        if mode.selectedSegmentIndex == 0 {
+            request.transportType = .walking
+        }
+        
+        if mode.selectedSegmentIndex == 1 {
+            request.transportType = .automobile
+        }
+        
+        request.requestsAlternateRoutes = false
+        
+        return request
+    }
+    
+    @objc func addAnnotation(gestureRecognizer:UIGestureRecognizer){
+        let touchPoint = gestureRecognizer.location(in: mapView)
+        let newCoordinates = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = newCoordinates
+        
+        
+        _ = MKAnnotationView(annotation: annotation, reuseIdentifier: "b")
+        
+        //        let rev = ReversedGeoLocation(with: CLPlacemark(location: CLLocation(latitude: newCoordinates.latitude, longitude: newCoordinates.longitude), name: "", postalAddress: CNPostalAddress()))
+        
+        
+        let ann = Site(title: "  ", locationName: "", discipline: "", coordinate: newCoordinates)
+        
+        mapView.addAnnotation(ann)
+        mapView.selectAnnotation(ann, animated: false)
+        
     }
     
     
     // main
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        infoTable.delegate = self
+        infoTable.dataSource = self
+        
+        synth.delegate = self
+        
+        
+        let uilgr = UILongPressGestureRecognizer(target: self, action: #selector(addAnnotation(gestureRecognizer:)))
+        uilgr.minimumPressDuration = 1.0
+        
+        //IOS 9
+        mapView.addGestureRecognizer(uilgr)
         
         
         
@@ -197,9 +489,22 @@ extension LibrariesMap: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
         let location = view.annotation as! Site
-        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
-        location.mapItem().openInMaps(launchOptions: launchOptions)
+        //        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
+        //        location.mapItem().openInMaps(launchOptions: launchOptions)
+        
+        getDirections(to: location.coordinate)
+        
+        
+        
     }
+    
+    func resetMapView(withNew directions: MKDirections) {
+        mapView.removeOverlays(mapView.overlays)
+        directionsArray.append(directions)
+        let _ = directionsArray.map { $0.cancel() }
+    }
+    
+    
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
         
@@ -255,7 +560,9 @@ extension LibrariesMap: MKMapViewDelegate {
         let smallSquare = CGSize(width: 30, height: 30)
         let button = UIButton(frame: CGRect(origin: .zero, size: smallSquare))
         button.setBackgroundImage(UIImage(named: "Maps-icon"), for: .normal)
-        button.addTarget(self, action: #selector((getDirections)), for: .touchUpInside)
+        
+        button.addTarget(self, action: #selector((getDirections(to:))), for: .touchUpInside)
+        
         pinView?.leftCalloutAccessoryView = button
         return pinView
     }
