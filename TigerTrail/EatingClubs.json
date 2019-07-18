@@ -1,0 +1,37 @@
+{
+  "data": [
+    [1,
+      "61 Prospect Ave",
+      "Cap & Gown Club",
+      "40.34827104119497", "-74.6509839211642"
+    ],
+    [2,
+      "65 Prospect Avenue",
+      "Cloister Inn",
+      "40.34861693440392" ,
+      "-74.65066194534302"
+    ],
+    [3,
+      "48 Prospect Avenue",
+      "Tiger Inn",
+      "40.34892288605228",
+      "-74.6522605419159"
+    ],
+    [4,
+        "21 Prospect Ave",
+        "Cannon Dial Elm Club",
+        "40.34783197120976", "-74.65337097644806"
+    ],
+    [5, "79 Prospect Avenue","Princeton Charter Club", "40.348754" , "-74.6500526"],
+    [6, "40 Prospect Avenue", "The Colonial Club of Princeton University",  "40.34876466510328","-74.65278381845928"],
+    [7, "62 Washington Road", "Terrace F. Club", "40.347162" ,"-74.653901"],
+    [8, "13 Prospect Avenue", "Princeton Tower Club", "40.34770871381065","-74.65392070602758"],
+    [9, "51 Prospect Ave", "Cottage Club", "40.348257160740644", "-74.65170800685883"],
+    [10, "43 Prospect Ave", "The Ivy Club", "40.348163721243644" ,"-74.65224838605491"],
+    [11, "33 Prospect Avenue", "Princeton Quadrangle Club", "40.34798435265194","-74.65275536847128"],
+    [12, "5 Prospect Ave", "Princeton Campus Club", "40.3475475663169","-74.65447339023956"]
+
+
+]
+
+}
